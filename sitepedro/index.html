@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nosso Amor ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff4d4d, #800000);
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* TOPO */
+header {
+    padding: 30px;
+}
+
+header h1 {
+    font-size: 32px;
+    animation: brilho 2s infinite alternate;
+}
+
+@keyframes brilho {
+    from { text-shadow: 0 0 10px white; }
+    to { text-shadow: 0 0 25px pink; }
+}
+
+/* GALERIA */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.galeria img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: 0.4s;
+}
+
+.galeria img:hover {
+    transform: scale(1.08);
+    filter: brightness(1.2);
+}
+
+/* TEXTO */
+.mensagem {
+    padding: 20px;
+    font-size: 18px;
+    animation: aparecer 2s ease-in;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* MUSICA */
+.musica {
+    background: rgba(255,255,255,0.1);
+    margin: 20px;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+/* BOTÃO */
+.botao {
+    background: #ff1a1a;
+    border: none;
+    padding: 15px 25px;
+    color: white;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.botao:hover {
+    background: #cc0000;
+    transform: scale(1.1);
+}
+
+/* MENSAGEM ESCONDIDA */
+.surpresa {
+    display: none;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+/* CORAÇÕES */
+.coracao {
+    position: fixed;
+    color: red;
+    animation: subir 5s linear infinite;
+}
+
+@keyframes subir {
+    0% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+    50% { opacity: 1; }
+    100% {
+        transform: translateY(-10vh);
+        opacity: 0;
+    }
+}
+
+/* RESPONSIVO */
+@media (max-width: 600px) {
+    header h1 { font-size: 24px; }
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- MÚSICA -->
+<audio autoplay loop>
+    <source src="SUA_MUSICA.mp3" type="audio/mpeg">
+</audio>
+
+<header>
+    <h1>💖 Meu gato gostoso 💖</h1>
+    <p>Você é tudo pra mim ❤️</p>
+</header>
+
+<section class="galeria">
+    <img src="IMG_0972.jpeg">
+    <img src="IMG_1351.jpeg">
+    <img src="IMG_2980.jpeg">
+    <img src="IMG_3141.jpeg">
+</section>
+
+<section class="mensagem">
+    <p>
+        Você é uma das coisas mais importantes da minha vida.
+Desde que você apareceu, tudo ficou mais leve, mais bonito e com mais sentido.
+
+Você me faz sorrir nos dias difíceis, me acalma quando eu preciso e me faz sentir amada de um jeito que eu nunca senti antes.
+
+Eu sou muito grata por ter você comigo.
+E quero continuar construindo momentos ao seu lado, porque com você… tudo vale a pena ❤️
+    </p>
+</section>
+
+<section class="musica">
+    <h2>Lutar pelo o que é meu 🎶</h2>
+    <p>
+        Eu vou lutar pelo que é meu,<br>
+        Nem que eu tenha que ir até o fim...<br><br>
+
+        Nada vai me impedir de te amar,<br>
+        Porque você é tudo pra mim 💘
+    </p>
+</section>
+
+<button class="botao" onclick="mostrarMensagem()">Clique aqui ❤️</button>
+
+<div class="surpresa" id="mensagem">
+    💌 Eu te amo mais do que palavras podem dizer 💖
+</div>
+
+<script>
+function mostrarMensagem() {
+    document.getElementById("mensagem").style.display = "block";
+}
+
+/* CORAÇÕES CAINDO */
+setInterval(() => {
+    let coracao = document.createElement("div");
+    coracao.innerHTML = "❤️";
+    coracao.classList.add("coracao");
+    coracao.style.left = Math.random() * 100 + "vw";
+    coracao.style.fontSize = (Math.random() * 20 + 20) + "px";
+
+    document.body.appendChild(coracao);
+
+    setTimeout(() => {
+        coracao.remove();
+    }, 5000);
+}, 500);
+</script>
+
+</body>
+</html>
